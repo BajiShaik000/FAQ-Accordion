@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Work Sans", sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: url('./assets/images/background-pattern-desktop.svg') no-repeat top;
+    background-size: contain;
+    background-color: #8c69914f;
+}
+
+.accordion {
+    background-color: #fff;
+    width: 35%;
+    height: 450px;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0 0 3px #808080;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 20px;
+}
+
+.header img {
+    width: 35px;
+    height: 35px;
+}
+
+.main-heading {
+    margin: 10px;
+    padding: 10px;
+    font-weight: 700;
+    font-size: 48px;
+}
+
+.section {
+    padding: 10px;
+    margin: 10px;
+}
+
+.section:not(:last-child){
+    border-bottom: 1px solid hsl(275, 100%, 97%);
+}
+
+.question {
+    font-weight: 600;
+    margin-bottom: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.question img{
+    width: 25px;
+    height: 25px;
+}
+
+.question:hover {
+    color: hsl(300, 93%, 42%);
+}
+
+.answer {
+    color: #808080;
+    font-size: small;
+    line-height: 1.5;
+    height: 0px;
+    overflow: hidden;
+    transition: ease-out 0.5s;
+}
+
+.accordion .section.active .answer {
+    height: 70px;
+}
+
+.accordion .section.active .plus{
+    display: none;
+}
+
+.accordion .section.active .minus{
+    display: inline;
+}
+
+.minus{
+    display: none;
+}
+
+@media screen and (max-width : 376px) {
+    body {
+        height: 100vh;
+        background: url('./assets/images/background-pattern-mobile.svg') no-repeat top/ contain;
+    }
+
+    .accordion {
+        width: 85%;
+        border-radius: 10px;
+        padding: 10px;
+        height: auto;
+    }
+
+    .main-heading {
+        font-size: 32px;
+        margin: 5px;
+        padding: 5px;
+    }
+
+    .header img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .section {
+        margin-bottom: 15px;
+        padding: 5px;
+    }
+
+    .question{
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .question .text{
+        width: 80%;
+    }
+
+    .question:hover {
+        color: hsl(300, 93%, 42%);
+    }
+
+    .answer {
+        color: #808080;
+        font-size: smaller;
+        line-height: 1.5;
+        height: 0px;
+        overflow: hidden;
+        transition: ease-out 0.5s;
+    }
+
+    .accordion .section.active .answer {
+        height: 100px;
+    }
+}
